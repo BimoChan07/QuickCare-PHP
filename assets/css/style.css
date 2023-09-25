@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+header {
+    font-family: 'Lora', serif;
+    /* font-family: 'Trebuchet MS'; */
+}
+
+.hov {
+    text-decoration: none;
+}
+
+.hov:hover {
+    color: darkgray;
+}
+
+.navigation {
+    background: darkgreen;
+}
+
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    background-size: cover;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    border: none;
+    outline: 0 inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font {
+    font-family: 'Trebuchet MS';
+}
+
+.zoom {
+    /* background-color: green; */
+    transition: transform .2s;
+    /* Animation */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 40%; */
+}
+
+.wrapper {
+    width: auto;
+    margin: 0 auto;
+}
+
+.wid {
+    width: 90%;
+}
+
+.myA {
+    text-decoration: none;
+    color: black;
+}
+
+.myA:hover {
+    text-decoration: none;
+    text-decoration-color: blue;
+    color: blue;
+}
+
+.btn-eye {
+    justify-content: right;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+/* #btn-eye {
+    border: none;
+    background: none;
+    background: none;
+    margin-top: 5px;
+    border-radius: 50%;
+    align-self: stretch;
+    font-size: 0.9em;
+} */
