@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/dbconn.php';
+include '../includes/dbconnect.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,8 @@ include '../includes/dbconn.php';
     <title>Strumo | Manage Product</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
@@ -35,7 +36,7 @@ include '../includes/dbconn.php';
             <div class="container d-flex justify-content-center font">
 
                 <b>
-                    <h1>Manage Guitars</h1>
+                    <h1>Manage Doctors</h1>
                 </b>
             </div>
         </section>
@@ -48,27 +49,25 @@ include '../includes/dbconn.php';
             </div>
 
             <?php
-            $q = mysqli_query($mysqli, "SELECT * FROM products");
+            $q = mysqli_query($mysqli, "SELECT * FROM doctor");
             $rr = mysqli_num_rows($q);
             if (!$rr) {
-                echo "<h2 style='color:red'>No any products found !!!</h2>";
+                echo "<h2 style='color:red'>No doctors found !!!</h2>";
             } else {
-            ?>
-                <h2>All Products</h2>
+                ?>
+                <h2>All Doctors</h2>
 
                 <table class="table table-bordered table-hover mb-2">
-                    <tr>
-                        <th colspan="8"><a href="add-product.php">Add New Product</a></th>
-                    </tr>
+
                     <tr class=" success">
                         <th>S.No</th>
-                        <th>Name</th>
-                        <th>Photo</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Stock</th>
+                        <th>Fullname</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Specialization</th>
+                        <th>Username</th>
+                        <th>Creation Date</th>
                         <th>Delete</th>
-                        <th>Update</th>
                     </tr>
                     <?php
 
@@ -76,19 +75,22 @@ include '../includes/dbconn.php';
                     while ($row = mysqli_fetch_assoc($q)) {
                         echo "<tr>";
                         echo "<td>" . $i . "</td>";
-                        echo "<td>" . $row['brand'] . ' ' . $row['name'] . "</td>";
-                    ?>
-                        <td class="w-25 "><img class="img-fluid w-75" src="../admin/uploads/products/<?php echo $row['photo']; ?>" alt="" />
-                            <?php
-                            echo "<td>" . $row['description'] . "</td>";
-                            echo "<td>" . $row['price'] . "</td>";
-                            echo "<td>" . $row['stock'] . "</td>";
-                            ?>
-                        <td><a href="javascript:DeleteProducts('<?php echo $row['productid']; ?>')" class="btn btn-danger">Delete</a></td>
+                        echo "<td>" . $row['fullname'] . "</td>";
+                        ?>
+                        <?php
 
-                    <?php
-                        echo "<td><a href='updateProd.php?page=updateProd&pid=" . $row['productid'] . "' class='btn btn-secondary'>Update</a></td>";
-                        echo "</tr>";
+                        echo "<td>" . $row['phone'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['specialization'] . "</td>";
+                        echo "<td>" . $row['username'] . "</td>";
+                        echo "<td>" . $row['CreationDate'] . "</td>";
+
+                        ?>
+                        <td><a href="javascript:DeleteProducts('<?php echo $row['id']; ?>')" class="btn btn-danger">Delete</a>
+                        </td>
+
+                        <?php
+
                         $i++;
                     }
                     ?>

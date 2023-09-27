@@ -1,47 +1,58 @@
 <?php
 include('./includes/dbconn.php');
-    if(isset($_POST['submit']))
-  {
-    $name=$_POST['name'];
-    $mobnum=$_POST['phone'];
-    $email=$_POST['email'];
-    $appdate=$_POST['date'];
-    $aaptime=$_POST['time'];
-    $specialization=$_POST['specialization'];
-    $doctorlist=$_POST['doctorlist'];
-    $message=$_POST['message'];
-    $aptnumber=mt_rand(100000000, 999999999);
-    $cdate=date('Y-m-d');
+include('./includes/dbconnect.php');
+session_start();
 
-if($appdate<=$cdate){
-       echo '<script>alert("Appointment date must be greater than todays date")</script>';
-} else {
-    $sql="insert into appointment(AppointmentNumber,Name,MobileNumber,Email,AppointmentDate,AppointmentTime,Specialization,Doctor,Message)values(:aptnumber,:name,:mobnum,:email,:appdate,:aaptime,:specialization,:doctorlist,:message)";
-    $query=$dbh->prepare($sql);
-    $query->bindParam(':aptnumber',$aptnumber,PDO::PARAM_STR);
-    $query->bindParam(':name',$name,PDO::PARAM_STR);
-    $query->bindParam(':mobnum',$mobnum,PDO::PARAM_STR);
-    $query->bindParam(':email',$email,PDO::PARAM_STR);
-    $query->bindParam(':appdate',$appdate,PDO::PARAM_STR);
-    $query->bindParam(':aaptime',$aaptime,PDO::PARAM_STR);
-    $query->bindParam(':specialization',$specialization,PDO::PARAM_STR);
-    $query->bindParam(':doctorlist',$doctorlist,PDO::PARAM_STR);
-    $query->bindParam(':message',$message,PDO::PARAM_STR);
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $mobnum = $_POST['phone'];
+    $email = $_POST['email'];
+    $appdate = $_POST['date'];
+    $aaptime = $_POST['time'];
+    $specialization = $_POST['specialization'];
+    $doctorlist = $_POST['doctorlist'];
+    $message = $_POST['message'];
+    $aptnumber = mt_rand(100000000, 999999999);
+    $cdate = date('Y-m-d');
 
- $query->execute();
-   $LastInsertId=$dbh->lastInsertId();
-   if ($LastInsertId>0) {
-    echo '<script>alert("Your Appointment Request Has Been Send. We Will Contact You Soon")</script>';
-echo "<script>window.location.href ='index.php'</script>";
-  }
-  else
-    {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+    if ($appdate <= $cdate) {
+        echo '<script>alert("Appointment date must be greater than todays date")</script>';
+    } else {
+        $sql = "insert into appointment(AppointmentNumber,Name,username,MobileNumber,Email,AppointmentDate,AppointmentTime,Specialization,Doctor,Message)values(:aptnumber,:name,:username,:mobnum,:email,:appdate,:aaptime,:specialization,:doctorlist,:message)";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':aptnumber', $aptnumber, PDO::PARAM_STR);
+        $query->bindParam(':name', $name, PDO::PARAM_STR);
+        $query->bindParam(':username', $username, PDO::PARAM_STR);
+        $query->bindParam(':mobnum', $mobnum, PDO::PARAM_STR);
+        $query->bindParam(':email', $email, PDO::PARAM_STR);
+        $query->bindParam(':appdate', $appdate, PDO::PARAM_STR);
+        $query->bindParam(':aaptime', $aaptime, PDO::PARAM_STR);
+        $query->bindParam(':specialization', $specialization, PDO::PARAM_STR);
+        $query->bindParam(':doctorlist', $doctorlist, PDO::PARAM_STR);
+        $query->bindParam(':message', $message, PDO::PARAM_STR);
+
+        $query->execute();
+        $LastInsertId = $dbh->lastInsertId();
+        if ($LastInsertId > 0) {
+            echo '<script>alert("Your Appointment Request Has Been Send. We Will Contact You Soon")</script>';
+            echo "<script>window.location.href ='index.php'</script>";
+        } else {
+            echo '<script>alert("Something Went Wrong. Please try again")</script>';
+        }
     }
 }
-}
+$user = $_SESSION['username'];
+$q = mysqli_query($mysqli, "SELECT * FROM users WHERE username='$user'");
+$row = mysqli_fetch_assoc($q);
+
 ?>
+
+<!doctype html>
+<html lang="en">
+
 <head>
+    <title>QuickCare | Booking</title>
     <!-- Page Meta Tags-->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -51,7 +62,9 @@ echo "<script>window.location.href ='index.php'</script>";
     <meta name="keywords" content="" />
     <!-- Custom Google Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Roboto:wght@300;400;700&display=auto" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Roboto:wght@300;400;700&display=auto"
+        rel="stylesheet" />
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logos/quickcare.png" />
@@ -70,120 +83,129 @@ echo "<script>window.location.href ='index.php'</script>";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fix for custom scrollbar if JS is disabled-->
-    <noscript>
-        <style>
-            /**
-          * Reinstate scrolling for non-JS clients
-          */
-            .simplebar-content-wrapper {
-                overflow: auto;
-            }
-        </style>
-    </noscript>
-    <!-- Page Title -->
-    <title>QuickCare | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+
+    <link href="css/templatemo-medic-care.css" rel="stylesheet">
+    <script>
+        function getdoctors(val) {
+            //    alert(val);
+            $.ajax({
+                type: "POST",
+                url: "get_doctors.php",
+                data: 'sp_id=' + val,
+                success: function (data) {
+                    $("#doctorlist").html(data);
+                }
+            });
+        }
+    </script>
 </head>
-<script>
-function getdoctors(val) {
-  //  alert(val);
-    $.ajax({
-    type: "POST",
-    url: "get_doctors.php",
-    data:'sp_id='+val,
-    success: function(data){
-    $("#doctorlist").html(data);
-}
-});
-}
-</script>
-    </head>
+
 <body>
     <?php
     include './includes/header.php';
     ?>
-<div class="container">
-     
-                    <div class="row">
-                    
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <div class="booking-form">
-                                
-                                <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
-                            
-                                <form role="form" method="post">
-                                    <div class="container">
-                                        <div class="mb-3">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required='true'>
-                                        </div>
+    <div class="container">
 
-                                        <div class="mb-3">
-                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required='true'>
-                                        </div>
-                                   
-                                        <div class="mb-3">
-                                            <input type="telephone" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number" maxlength="10">
-                                        </div>
+        <div class="row">
 
-                                        <div class="mb-3">
-                                            <input type="date" name="date" id="date" value="" class="form-control">
-                                            
-                                        </div>
+            <div class="col-lg-8 col-12 mx-auto">
+                <div class="booking-form">
+                    <?php
+                    if (!$_SESSION['username']) {
+                        echo "<h2 style='color:red'>No appointment found !!!</h2>";
+                    } else {
+                        ?>
+                        <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
 
-                                            <div class="mb-3">
-                                            <input type="time" name="time" id="time" value="" class="form-control">
-                                            
-                                        </div>
+                        <form role="form" method="post">
+                            <div class="container">
+                                <div class="mb-3">
+                                    <input type="text" name="name" id="name" value="<?php echo $row['fullname'] ?>"
+                                        class="form-control" placeholder="Full name" required='true'>
+                                </div>
 
-                                        <div class="col-lg-6 col-12">
-                                    <select onChange="getdoctors(this.value);"  name="specialization" id="specialization" class="form-control" required>
-                                        <option value="">Select specialization</option>
-                                        <!--- Fetching States--->
+                                <div class="mb-3">
+                                    <input type="number" name="age" id="age" pattern="" class="form-control"
+                                        placeholder="Age" value="<?php echo $row['age'] ?>" required='true'>
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="telephone" name="phone" id="phone" class="form-control"
+                                        placeholder="Enter Phone Number" value="<?php echo $row['phone'] ?>" maxlength="10">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="date" name="date" id="date" value="" class="form-control">
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="time" name="time" id="time" value="" class="form-control">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-auto col-md-6 form-group"> <select onChange="getdoctors(this.value);"
+                                            name="specialization" id="specialization" class="form-control" required>
+                                            <option value="">Select specialization</option>
+                                            <!--- Fetching States--->
                                         <?php
-                                        $sql="SELECT * FROM specialization";
-                                        $stmt=$dbh->query($sql);
+                                        $sql = "SELECT * FROM specialization";
+                                        $stmt = $dbh->query($sql);
                                         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                        while($row =$stmt->fetch()) { 
-                                        ?>
-                                        <option value="<?php echo $row['ID'];?>"><?php echo $row['Specialization'];?></option>
-                                        <?php }?>
+                                        while ($row = $stmt->fetch()) {
+                                            ?>
+                                        <option value="<?php echo $row['ID']; ?>">
+                                            <?php echo $row['Specialization']; ?>
+                                        </option>
+                                        <?php } ?>
                                     </select>
-</div>
+                                </div>
+                                <div class="col-auto col-md-6 form-group">
+                                    <select name="doctorlist" id="doctorlist" class="form-control">
+                                        <option value="">Select Doctor</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <textarea class="form-control" rows="5" id="message" name="message"
+                                        placeholder="Additional Message"></textarea>
+                                </div>
 
-
-    <div class="col-lg-6 col-12">
-<select name="doctorlist" id="doctorlist" class="form-control">
-<option value="">Select Doctor</option>
-</select>
-</div>
-
-
-
-                                        <div class="col-12">
-                                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                            <button type="submit" class="form-control" name="submit" id="submit-button">Book Now</button>
-                                        </div>
-                                    </div>
-                                </form>
-
+                                <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                    <button type="submit" class="form-control btn btn-outline-dark" name="submit"
+                                        id="submit-button">Book Now</button>
+                                </div>
                             </div>
-                        </div>
+                    </form>
+                    <?php } ?>
 
-                    </div>
                 </div>
-            </section>
-        </main>
-        <?php include_once('includes/footer.php');?>
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/scrollspy.min.js"></script>
-        <script src="js/custom.js"></script>
-    </body>
+            </div>
+
+        </div>
+    </div>
+    </section>
+    </main>
+    <?php include_once('includes/footer.php'); ?>
+    <!-- JAVASCRIPT FILES -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/scrollspy.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
 </html>

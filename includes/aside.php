@@ -14,16 +14,16 @@
                 Dashboard
             </a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block hov">
+        <!-- <li class="nav-item d-none d-sm-inline-block hov">
             <a href="./add-product.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-upload"></i>
                 Add Product
             </a>
-        </li>
+        </li> -->
         <li class="nav-item d-none d-sm-inline-block hov">
             <a href="./manageprod.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-edit"></i>
-                Manage Product
+                Manage Doctors
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block hov">
@@ -33,9 +33,14 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block hov">
+            <a href="./viewAppointment.php" class="text-white-50 nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+Appointment            </a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block hov">
             <a href="./manageorder.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-briefcase"></i>
-                Manage Orders
+                Specialization
             </a>
         </li>
 

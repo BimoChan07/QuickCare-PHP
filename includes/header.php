@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -12,12 +8,16 @@ session_start();
         <div class="container-fluid">
             <div class="container px-4 w-75">
                 <div class="navbar-brand">
-                    <a href="./index.php"><img class="img-fluid" width="18%" src="./assets/images/logos/quickcare.png" href="./index.php" alt="Strumo" /></a>
-                    <a class="navbar-brand text-dark a" style="font-family:'Trebuchet MS'; font-size:30px;" href="./index.php"><strong class="hov">QuickCare</strong></a>
+                    <a href="./index.php"><img class="img-fluid" width="18%" src="./assets/images/logos/quickcare.png"
+                            href="./index.php" alt="Strumo" /></a>
+                    <a class="navbar-brand text-dark a" style="font-family:'Trebuchet MS'; font-size:30px;"
+                        href="./index.php"><strong class="hov">QuickCare</strong></a>
                 </div>
             </div>
             <div class="container w-75" style="font-family:'Lora', serif; font-size:14px;">
-                <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Menu-->
@@ -28,23 +28,38 @@ session_start();
                                 <h6>Home</h6>
                             </a>
                         </li>
-                                                  
+
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="about.php">
                                 <h6>About</h6>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="appointment.php">
+                            <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo '<a class="nav-link" href="login.php">
                                 <h6>Appointment</h6>
-                            </a>
+                            </a>';
+                            } else {
+                                echo '<a class="nav-link" href="appointment.php">
+                                <h6>Appointment</h6>
+                            </a>';
+                            }
+                            ?>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="booking.php">
+                            <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo '<a class="nav-link" href="login.php">
                                 <h6>Booking</h6>
-                            </a>
+                            </a>';
+                            } else {
+                                echo '<a class="nav-link" href="booking.php">
+                                <h6>Booking</h6>
+                            </a>';
+                            } ?>
                         </li>
-                       
+
 
                         <li class="nav-item">
                             <?php
@@ -59,7 +74,7 @@ session_start();
                             ?>
                             </h6></a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <!-- <a class="nav-link a text-light px-4" href="./logout.php"><b class=" hov"> -->
                             <?php if (isset($_SESSION['username'])) {
                                 echo '<div class="dropdown">
@@ -76,7 +91,7 @@ session_start();
                             ?>
                             </h6></a>
                         </li>
-                       
+
 
                     </ul>
                     <!-- / Menu-->

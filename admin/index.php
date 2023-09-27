@@ -1,5 +1,5 @@
 <?php
-include('../includes/dbconn.php');
+include('../includes/dbconnect.php');
 session_start();
 extract($_POST);
 
@@ -20,7 +20,7 @@ if (isset($login)) {
 <html lang="en">
 
 <head>
-    <title>Strumo | Admin Login</title>
+    <title>QuickCare | Admin Login</title>
     <!-- <script src="./js/validate.js"></script> -->
     <!-- Website Logo -->
     <link rel="icon" type="image/x-icon" href="../assets/images/webw.png" />
@@ -39,7 +39,7 @@ if (isset($login)) {
         <div class="container">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="col-5 d-flex justify-content-center m-auto">
-                    <div class="d-flex justify-content-center mb-1 mt-5 wid text-white" style="border-radius: 25px;">
+                    <div class="d-flex justify-content-center mb-1 mt-2 wid text-white" style="border-radius: 25px;">
                         <h3><a href="#" class="nav-link text-white">
                                 <span class="hov">Admin Login</span>
                             </a></h3>
@@ -54,7 +54,7 @@ if (isset($login)) {
                 <div class="col-5 d-flex justify-content-center m-auto">
                     <div class="card mb-5 p-4 py-0 text-black w-75 border" style="border-radius: 25px;">
                         <div class="border-2 card-body px-0 py-0 rounded-2">
-                            <img src="../assets/images/logos/strumo.png" width="40%" alt="Strumo" class="center mt-3 ">
+                            <img src="../assets/images/logos/quickcare.png" width="40%" alt="Strumo" class="center mt-3 ">
                             <h4 class="text-dark d-flex justify-content-center mt-2 mb-2 font">Admin</h4>
                             <form method="POST" class="mt-2">
                                 <fieldset>

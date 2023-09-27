@@ -1,5 +1,5 @@
 <?php
-include('../includes/dbconn.php');
+include('../includes/dbconnect.php');
 $uid = $_GET['id'];
 
 $q = mysqli_query($mysqli, "DELETE FROM users where id='$uid'");

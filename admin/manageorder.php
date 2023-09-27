@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/dbconn.php';
+include '../includes/dbconnect.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include '../includes/dbconn.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strumo | Manage Order</title>
+    <title>Strumo | Manage Specialization</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
@@ -34,7 +34,7 @@ include '../includes/dbconn.php';
         <section class="content-header">
             <div class="container d-flex justify-content-center font">
                 <b>
-                    <h1>Manage Orders</h1>
+                    <h1>Manage Specialization</h1>
                 </b>
             </div>
 
@@ -48,7 +48,7 @@ include '../includes/dbconn.php';
 
 
                 <?php
-                $q = mysqli_query($mysqli, "SELECT * FROM orders");
+                $q = mysqli_query($mysqli, "SELECT * FROM specialization");
                 $rr = mysqli_num_rows($q);
                 if (!$rr) {
                     echo "<h2 style='color:red'>No any user exists !!!</h2>";
@@ -57,7 +57,7 @@ include '../includes/dbconn.php';
                     <script>
                         function DeleteOrder(id) {
                             if (confirm("Do you want to delete this order?")) {
-                                alert("Order Deleted Successfully")
+                                alert("Specialization Deleted Successfully")
                                 window.location.href = "deleteorder.php?id=" + id;
                             }
                         }
@@ -67,16 +67,14 @@ include '../includes/dbconn.php';
                     </b>
 
                     <table class="table table-hover table-bordered">
-                        <Tr class="success">
+                    <tr>
+                        <th colspan="8"><a href="addSpecialization.php">Add New Specialization</a></th>
+                    </tr>    
+                    <tr class="success">
                             <th>S.No</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Order id</th>
-                            <th>Ordered By</th>
-                            <th>Address</th>
-                            <th>Phone Number</th>
-                            <th>Payment Method</th>
+                            <th>Specialization</th>
+                            <th>Creation Date</th>
+
                             <th>Delete</th>
                         </tr>
                         <?php
@@ -87,17 +85,12 @@ include '../includes/dbconn.php';
 
                             echo "<tr>";
                             echo "<td>" . $i . "</td>";
-                            echo "<td>" . $row['item_name'] . "</td>";
-                            echo "<td>" . $row['price'] . "</td>";
-                            echo "<td>" . $row['quantity'] . "</td>";
-                            echo "<td>" . $row['order_id'] . "</td>";
-                            echo "<td>" . $row['orderedby'] . "</td>";
-                            echo "<td>" . $row['address'] . "</td>";
-                            echo "<td>" . $row['phoneno'] . "</td>";
-                            echo "<td>" . $row['payment_mode'] . "</td>";
+                            echo "<td>" . $row['Specialization'] . "</td>";
+                            echo "<td>" . $row['CreationDate'] . "</td>";
+                            
                         ?>
 
-                            <td><a href="javascript:DeleteOrder('<?php echo $row['id']; ?>')" class="btn btn-danger">Delete</a></td>
+                            <td><a href="javascript:DeleteOrder('<?php echo $row['ID']; ?>')" class="btn btn-danger">Delete</a></td>
                         <?php
                             echo "</tr>";
                             $i++;

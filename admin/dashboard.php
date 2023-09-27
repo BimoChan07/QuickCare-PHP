@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/dbconn.php';
+include '../includes/dbconnect.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include '../includes/dbconn.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Strumo | Dashboard</title>
+  <title>Admin | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
@@ -44,9 +44,9 @@ include '../includes/dbconn.php';
             <!-- small box -->
             <div class="small-box bg-dark zoom">
               <div class="inner hov">
-                <h4 class="mb-2">Total Products</h4>
+                <h4 class="mb-2">Total Doctors</h4>
                 <?php
-                $dashTotProd = "SELECT * from products";
+                $dashTotProd = "SELECT * from doctor";
                 $dashTotProdQuery = mysqli_query($mysqli, $dashTotProd);
 
                 if ($totalProd = mysqli_num_rows($dashTotProdQuery)) {
@@ -57,7 +57,7 @@ include '../includes/dbconn.php';
                 ?>
               </div>
               <div class="icon">
-                <i class="fas fa-gift"></i>
+                <i class="fas fa-docker"></i>
               </div>
               <a href="./manageprod.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -90,9 +90,9 @@ include '../includes/dbconn.php';
             <!-- small box -->
             <div class="small-box bg-olive zoom">
               <div class="inner">
-                <h4 class="mb-2">Total Orders</h4>
+                <h4 class="mb-2">Total Appointments</h4>
                 <?php
-                $dashTotOrd = "SELECT * from orders";
+                $dashTotOrd = "SELECT * from appointment";
                 $dashTotOrdQuery = mysqli_query($mysqli, $dashTotOrd);
 
                 if ($totalProd = mysqli_num_rows($dashTotOrdQuery)) {
@@ -105,7 +105,7 @@ include '../includes/dbconn.php';
               <div class="icon">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <a href="./manageorder.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./viewAppointment.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -113,10 +113,10 @@ include '../includes/dbconn.php';
             <!-- small box -->
             <div class="small-box bg-danger zoom">
               <div class="inner">
-                <h4 class="mb-2">Total Categories</h4>
+                <h4 class="mb-2">Total Specialization</h4>
                 <h4 class="mb-0">
                   <?php
-                  $dashTotOrd = "SELECT category from products";
+                  $dashTotOrd = "SELECT * from specialization";
                   $dashTotOrdQuery = mysqli_query($mysqli, $dashTotOrd);
 
                   if ($totalProd = mysqli_num_rows($dashTotOrdQuery)) {
@@ -129,7 +129,7 @@ include '../includes/dbconn.php';
               <div class="icon">
                 <i class="fas fa-arrow-circle-right"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./manageorder.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         </div>

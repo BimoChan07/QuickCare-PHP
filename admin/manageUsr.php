@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/dbconn.php';
+include '../includes/dbconnect.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include '../includes/dbconn.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strumo | Manage User</title>
+    <title>QuickCare | Manage User</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
@@ -69,12 +69,10 @@ include '../includes/dbconn.php';
                     <table class="table table-hover table-bordered">
                         <Tr class="success">
                             <th>S.No</th>
-                            <th>User Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Contact</th>
+                            <th>Fullname</th>
+                            <th>Age</th>
+                            <th>Phone</th>
                             <th>Username</th>
-                            <th>Password</th>
                             <th>Delete</th>
                         </tr>
                         <?php
@@ -86,11 +84,9 @@ include '../includes/dbconn.php';
                             echo "<tr>";
                             echo "<td>" . $i . "</td>";
                             echo "<td>" . $row['fullname'] . "</td>";
-                            echo "<td>" . $row['email'] . "</td>";
-                            echo "<td>" . $row['address'] . "</td>";
+                            echo "<td>" . $row['age'] . "</td>";
                             echo "<td>" . $row['phone'] . "</td>";
                             echo "<td>" . $row['username'] . "</td>";
-                            echo "<td>" . $row['password'] . "</td>";
                         ?>
 
                             <td><a href="javascript:DeleteUser('<?php echo $row['id']; ?>')" class="btn btn-danger">Delete</a></td>
