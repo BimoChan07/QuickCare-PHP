@@ -3,32 +3,36 @@
     <div class="media">
       <div class="media-left">
         <div class="avatar avatar-md avatar-circle">
-          <a href="javascript:void(0)"><img class="img-responsive" src="assets/images/images.png" alt="avatar"/></a>
+          <a href="javascript:void(0)"><img class="img-responsive" src="assets/images/images.png" alt="avatar" /></a>
         </div><!-- .avatar -->
       </div>
       <div class="media-body">
         <div class="foldable">
           <?php
-$eid=$_SESSION['damsid'];
-$sql="SELECT username,fullname from doctor where id=:eid";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':eid',$eid,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
+          $eid = $_SESSION['damsid'];
+          $sql = "SELECT username,fullname from doctor where id=:eid";
+          $query = $dbh->prepare($sql);
+          $query->bindParam(':eid', $eid, PDO::PARAM_STR);
+          $query->execute();
+          $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-foreach($results as $row)
-{    
-$username=$row->username;   
-$fname=$row->fullname;     
-}   ?>
-          <h5><a href="javascript:void(0)" class="username"><?php echo $fname ;?></a></h5>
+          foreach ($results as $row) {
+            $username = $row->username;
+            $fname = $row->fullname;
+          } ?>
+          <h5><a href="javascript:void(0)" class="username">
+              <?php echo $fname; ?>
+            </a></h5>
           <ul>
             <li class="dropdown">
-              <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <small><?php echo $username;?></small>
+              <a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <small>
+                  <?php echo $username; ?>
+                </small>
                 <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu animated flipInY">
+              <ul class="dropdown-menu animated">
                 <li>
                   <a class="text-color" href="dashboard.php">
                     <span class="m-r-xs"><i class="fa fa-home"></i></span>
@@ -69,12 +73,12 @@ $fname=$row->fullname;
           <a href="dashboard.php">
             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
             <span class="menu-text">Dashboard</span>
-            
+
           </a>
-       
+
         </li>
 
-       <li class="has-submenu">
+        <li class="has-submenu">
           <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon zmdi zmdi-pages zmdi-hc-lg"></i>
             <span class="menu-text">Appointment</span>
@@ -85,10 +89,10 @@ $fname=$row->fullname;
             <li><a href="approved-appointment.php"><span class="menu-text">Approved Appointment</span></a></li>
             <li><a href="cancelled-appointment.php"><span class="menu-text">Cancelled Appointment</span></a></li>
             <li><a href="all-appointment.php"><span class="menu-text">All Appointment</span></a></li>
-           
+
           </ul>
         </li>
-        
+
         <li>
           <a href="search.php">
             <i class="menu-icon zmdi zmdi-search zmdi-hc-lg"></i>
