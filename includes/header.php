@@ -30,7 +30,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="about.php">
+                            <a class="nav-link" href="#about">
                                 <h6>About</h6>
                             </a>
                         </li>

@@ -181,7 +181,7 @@
         <!--/ Top Banner-->
 
         <!-- Featured Brands-->
-        <div class="brand-section container-fluid" data-aos="fade-in">
+        <!-- <div class="brand-section container-fluid" data-aos="fade-in">
             <div class="bg-overlay-sides-white-to-transparent bg-white py-5">
                 <section class="marquee marquee-hover-pause">
                     <div class="marquee-body">
@@ -254,7 +254,7 @@
                     </div>
                 </section>
             </div>
-        </div>
+        </div> -->
 
         <!--/ Featured Brands-->
 
@@ -292,90 +292,60 @@
                         }
                       }'>
                     <a href="#" class="nav-link text-dark">
-                        <h1 class="d-flex justify-content-center m-auto font mb-4">Brands</h1>
+                        <h1 class="d-flex justify-content-center m-auto font mb-4 mt-4">Our Services</h1>
                     </a>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                             <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="000">
                                 <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/enya.jpg"
+                                    <img class="w-100" title="" src="./assets/images/categories/1.jpg"
                                         alt="php Bootstrap Template by Pixel Rocket" />
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Enya Guitars</p>
-                                <h4 class="lead fw-bold">Made in China</h4>
-                                <a href="./enya.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
+                                <p class="title-small mb-2 text-muted">You can select the desired doctor</p>
+                                <h4 class="lead fw-bold">Doctor Selection</h4>
+                                <a href="appointment.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
+                                    Appointment</a>
                             </div>
                         </div>
 
                         <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                             <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="100">
                                 <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/fender.jfif"
+                                    <img class="w-100" title="" src="./assets/images/categories/2.webp"
                                         alt="php Bootstrap Template by Pixel Rocket" />
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Fender Guitars</p>
-                                <h4 class="lead fw-bold">Made in USA</h4>
-                                <a href="./fender.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
+                                <p class="title-small mb-2 text-muted">Select your preferred Date and Time </p>
+                                <h4 class="lead fw-bold">Date And Time Selection</h4>
+                                <a href="appointment.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
+                                    Appointments</a>
                             </div>
                         </div>
 
                         <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                             <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="200">
                                 <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/hex.jpg"
+                                    <img class="w-100" title="" src="./assets/images/categories/3.avif"
                                         alt="php Bootstrap Template by Pixel Rocket" />
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Hex Guitars</p>
-                                <h4 class="lead fw-bold">Made in Indonesia</h4>
-                                <a href="./hex.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
+                                <p class="title-small mb-2 text-muted">Check your booking status</p>
+                                <h4 class="lead fw-bold">Booking Status</h4>
+                                <a href="booking.php" class="btn btn-dark d-flex m-auto justify-content-center">Check
+                                    Now</a>
                             </div>
                         </div>
 
                         <div class="swiper-slide align-self-stretch bg-transparent h-auto">
                             <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="400">
                                 <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/moksh.jfif"
+                                    <img class="w-100" title="" src="./assets/images/categories/4.webp"
                                         alt="php Bootstrap Template by Pixel Rocket" />
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Mantra Guitars</p>
-                                <h4 class="lead fw-bold">Made in China </h4>
-                                <p class="title-small mb-2 text-muted">Designed in Nepal
+                                <p class="title-small mb-2 text-muted">View our specialists</p>
+                                <h4 class="lead fw-bold">Our Specialists </h4>
+                                <p class="title-small mb-2 text-muted">Professionals
                                 </p>
-                                <a href="./mantra.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide align-self-stretch bg-transparent h-auto">
-                            <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="300">
-                                <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/ibanez.jpg"
-                                        alt="php Bootstrap Template by Pixel Rocket" />
-                                </picture>
-                                <p class="title-small mb-2 text-muted">
-                                    Ibanez Guitars
-                                </p>
-                                <h4 class="lead fw-bold">Made in Japan</h4>
-                                <a href="./ibanez.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
-                            </div>
-                        </div>
-
-
-
-                        <div class="swiper-slide align-self-stretch bg-transparent h-auto">
-                            <div class="me-xl-n4 me-xxl-n5" data-aos="fade-up" data-aos-delay="600">
-                                <picture class="d-block mb-4 img-clip-shape-one">
-                                    <img class="w-100" title="" src="./assets/images/categories/taylor.jpg"
-                                        alt="php Bootstrap Template by Pixel Rocket" />
-                                </picture>
-                                <p class="title-small mb-2 text-muted">Taylor Guitars</p>
-                                <h4 class="lead fw-bold">Made in USA</h4>
-                                <a href="./taylor.php"
-                                    class="btn btn-dark d-flex m-auto justify-content-center">Products</a>
+                                <a href="./viewDoctors.php"
+                                    class="btn btn-dark d-flex m-auto justify-content-center">Show</a>
                             </div>
                         </div>
                     </div>
@@ -405,50 +375,40 @@
             <!-- /Featured Categories-->
 
             <!-- Homepage Intro-->
-            <div class="position-relative row my-lg-7 pt-5 pt-lg-0 g-8">
+            <div class="position-relative row my-lg-7 pt-5 pt-lg-0 g-8" id="about">
                 <div class="bg-text bottom-0 start-0 end-0" data-aos="fade-up">
                     <h2 class="bg-text-title opacity-10">
-                        <span class="text-outline-dark">Strumo</span>Guitars
+                        <span class="text-outline-dark">Quick</span>Care
                     </h2>
                 </div>
                 <div class="col-12 col-md-6 position-relative z-index-20 mb-7 mb-lg-0" data-aos="fade-right">
-                    <p class="text-muted title-small">Welcome</p>
+                    <p class="text-muted title-small">Welcome to</p>
                     <h3 class="display-3 fw-bold mb-5">
-                        <span class="text-outline-dark">Strumo</span> Brings Music To Your Life
+                        <span class="text-outline-dark">QuickCare </span>- Your Health, Our Priority
                     </h3>
                     <p class="lead">
-                        We are Strumo, a leading supplier of global guitar brands, including names such as <a
-                            href="./taylor.php" class="myA">Taylor</a>,
-                        <a href="./mantra.php" class="myA">Mantra</a>,
-                        <a href="./ibanez.php" class="myA">Ibanez</a>,
-                        <a href="./hex.php" class="myA">Hex</a> and many more.
-                    </p>
+                        QuickCare, a leading doctor appoint booking website that lets you to view, select date,
+                        time and the doctor accoriding to the treatment you need.</p>
                     <p class="lead">
-                        With nation-wide shipping with a reasonable price - Now's a great time to pick out something
-                        from our range.
+                        QuickCare - Doctors in Hand
                     </p>
-                    <a href="./products.php"
-                        class="btn mx-0 btn-dark d-flex m-auto justify-content-center align-self-start"
-                        role="button">Shop Now</a>
+
                 </div>
                 <div class="col-12 col-md-6 position-relative z-index-20 pe-0" data-aos="fade-left">
                     <picture class="w-50 d-block position-relative z-index-10 border border-white border-4 shadow-lg">
-                        <img class="img-fluid" src="./assets/images/banners/3.jfif" alt="" />
+                        <img class="img-fluid" src="./assets/images/banners/1.jpg" alt="" />
                     </picture>
-                    <picture
-                        class="w-60 d-block me-8 mt-n10 shadow-lg border border-white border-4 position-relative z-index-20 ms-auto">
-                        <img class="img-fluid" src="./assets/images/banners/2.jfif" alt="" />
-                    </picture>
+
                     <picture
                         class="w-50 d-block me-8 mt-n7 shadow-lg border border-white border-4 position-absolute top-0 end-0 z-index-0">
-                        <img class="img-fluid" src="./assets/images/banners/5.jpg" alt="" />
+                        <img class="img-fluid" src="./assets/images/categories/2.webp" alt="" />
                     </picture>
                 </div>
             </div>
 
             <div data-aos="fade-in">
                 <h3 class="title-large text-muted text-center mb-3 mt-5">
-                    <a href="./index.php" class="nav-link text-black">#Strumo</a>
+                    <a href="./index.php" class="nav-link text-black">#QuickCare</a>
                 </h3>
             </div>
 

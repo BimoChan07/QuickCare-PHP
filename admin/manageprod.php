@@ -9,7 +9,7 @@ include '../includes/dbconnect.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strumo | Manage Product</title>
+    <title>QuickCare | Manage Doctors</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -20,7 +20,7 @@ include '../includes/dbconnect.php';
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link rel="icon" type="image/x-icon" href="../assets/images/logos/webw.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
 
 </head>
 
