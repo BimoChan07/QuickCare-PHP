@@ -25,6 +25,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<link rel="stylesheet" href="assets/css/bootstrap.css">
 		<link rel="stylesheet" href="assets/css/core.css">
 		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
+
 		<!-- endbuild -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
 		<script src="libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
@@ -51,8 +53,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
-								<div class="widget stats-widget">
-									<div class="widget-body clearfix">
+								<div class="widget stats-widget" style="border-radius:15px">
+									<div class="widget-body clearfix ">
 										<?php
 										$docid = $_SESSION['damsid'];
 										;
@@ -72,7 +74,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 										</div>
 										<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
 									</div>
-									<footer class="widget-footer bg-warning">
+									<footer class="widget-footer bg-warning "
+										style=" border-bottom-left-radius:15px;border-bottom-right-radius:15px;">
 										<a href="new-appointment.php"><small> View Detail</small></a>
 										<span class="small-chart pull-right" data-plugin="sparkline"
 											data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
@@ -81,7 +84,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 							</div>
 
 							<div class="col-md-6 col-sm-6">
-								<div class="widget stats-widget">
+								<div class="widget stats-widget" style="border-radius:15px">
 									<div class="widget-body clearfix">
 										<?php
 										$docid = $_SESSION['damsid'];
@@ -100,9 +103,10 @@ if (strlen($_SESSION['damsid'] == 0)) {
 												</span></h3>
 											<small class="text-color">Total Approved</small>
 										</div>
-										<span class="pull-right big-icon watermark"><i class="fa fa-ban"></i></span>
+										<span class="pull-right big-icon watermark"><i class="fa fa-unlock-alt"></i></span>
 									</div>
-									<footer class="widget-footer bg-success">
+									<footer class="widget-footer bg-success"
+										style=" border-bottom-left-radius:15px;border-bottom-right-radius:15px;">
 										<a href="approved-appointment.php"><small> View Detail</small></a>
 										<span class="small-chart pull-right" data-plugin="sparkline"
 											data-options="[1,2,3,5,4], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
@@ -111,7 +115,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 							</div>
 
 							<div class="col-md-6 col-sm-6">
-								<div class="widget stats-widget">
+								<div class="widget stats-widget" style="border-radius:15px">
 									<div class="widget-body clearfix">
 										<div class="pull-left">
 											<?php
@@ -130,9 +134,10 @@ if (strlen($_SESSION['damsid'] == 0)) {
 												</span></h3>
 											<small class="text-color">Cancelled Appointment</small>
 										</div>
-										<span class="pull-right big-icon watermark"><i class="fa fa-unlock-alt"></i></span>
+										<span class="pull-right big-icon watermark"><i class="fa fa-ban"></i></span>
 									</div>
-									<footer class="widget-footer bg-danger">
+									<footer class="widget-footer bg-danger"
+										style=" border-bottom-left-radius:15px;border-bottom-right-radius:15px;">
 										<a href="cancelled-appointment.php"><small> View Detail</small></a>
 										<span class="small-chart pull-right" data-plugin="sparkline"
 											data-options="[2,4,3,4,3], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
@@ -141,7 +146,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 							</div>
 
 							<div class="col-md-6 col-sm-6">
-								<div class="widget stats-widget">
+								<div class="widget stats-widget" style="border-radius:15px">
 									<div class="widget-body clearfix">
 
 										<div class="pull-left">
@@ -163,7 +168,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 										</div>
 										<span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
 									</div>
-									<footer class="widget-footer bg-primary">
+									<footer class="widget-footer bg-primary"
+										style=" border-bottom-left-radius:15px;border-bottom-right-radius:15px;">
 										<a href="all-appointment.php"><small> View Detail</small></a>
 										<span class="small-chart pull-right" data-plugin="sparkline"
 											data-options="[5,4,3,5,2],{ type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
@@ -184,7 +190,6 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		</main>
 		<!--========== END app main -->
 
-		<?php include_once('includes/customizer.php'); ?>
 
 
 

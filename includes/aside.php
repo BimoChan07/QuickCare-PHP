@@ -21,7 +21,7 @@
             </a>
         </li> -->
         <li class="nav-item d-none d-sm-inline-block hov">
-            <a href="./manageprod.php" class="text-white-50 nav-link">
+            <a href="./manageDoctor.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 Manage Doctors
             </a>
@@ -35,10 +35,10 @@
         <li class="nav-item d-none d-sm-inline-block hov">
             <a href="./viewAppointment.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-edit"></i>
-Appointment            </a>
+                Appointment </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block hov">
-            <a href="./manageorder.php" class="text-white-50 nav-link">
+            <a href="./manageSpecialization.php" class="text-white-50 nav-link">
                 <i class="nav-icon fas fa-briefcase"></i>
                 Specialization
             </a>
@@ -51,7 +51,8 @@ Appointment            </a>
         <!-- Notifications Dropdown Menu -->
         <li>
             <a class="nav-link text-white-50" href="#">
-                <i class="far fa-user text-white-50"></i> <?php echo $_SESSION['admin']; ?>
+                <i class="far fa-user text-white-50"></i>
+                <?php echo $_SESSION['admin']; ?>
             </a>
         </li>
         <li class="info">

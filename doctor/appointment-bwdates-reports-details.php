@@ -14,7 +14,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 
 	<head>
 
-		<title>DAMS || B/W Dates Appointment Detail</title>
+		<title>QuickCare | Dates Appointment Detail</title>
 
 		<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -25,6 +25,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<link rel="stylesheet" href="assets/css/bootstrap.css">
 		<link rel="stylesheet" href="assets/css/core.css">
 		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
+
 		<!-- endbuild -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
 		<script src="libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
@@ -51,7 +53,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 					<div class="row">
 						<!-- DOM dataTable -->
 						<div class="col-md-12">
-							<div class="widget">
+							<div class="widget" style="border-radius:15px">
 								<header class="widget-header">
 									<h4 class="m-t-0 header-title">Between Dates Reports</h4>
 									<?php
@@ -150,14 +152,9 @@ if (strlen($_SESSION['damsid'] == 0)) {
 					</div><!-- .row -->
 				</section><!-- .app-content -->
 			</div><!-- .wrap -->
-			<!-- APP FOOTER -->
 			<?php include_once('includes/footer.php'); ?>
-			<!-- /#app-footer -->
 		</main>
-		<!--========== END app main -->
-
-		<!-- APP CUSTOMIZER -->
-		<?php include_once('includes/customizer.php'); ?>
+		\
 
 
 		<!-- build:js assets/js/core.min.js -->

@@ -25,8 +25,8 @@ include('../includes/dbconn.php');
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/quickcare.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logos/webw.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/quickcarew.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logos/quickcarew.png" />
     <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -56,17 +56,17 @@ include('../includes/dbconn.php');
 
 </head>
 
-<body class="font bg-dark">
+<body class="font" background="../assets/images/banners/opa.png">
 
     <!-- Main Section-->
     <!-- <section class="mt-0 overflow-hidden vh-100 d-flex justify-content-center align-items-center p-5 "> -->
     <section class="">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center mt-4">
+            <div class="d-flex justify-content-center align-items-center mt-2">
 
-                <div class="col-5 d-flex justify-content-center m-auto">
-                    <div class="card mb-5 mt-5 text-black border" style="border-radius: 25px;">
-                        <div class="card-body p-4 mt-1">
+                <div class="col-5 d-flex justify-content-center">
+                    <div class="card text-black border" style="border-radius: 25px;">
+                        <div class="card-body p-3">
                             <span class="d-flex justify-content-end">
                                 <a href="../index.php" class="myA">Go Back</a>
                             </span>
@@ -77,19 +77,20 @@ include('../includes/dbconn.php');
                                 <div class="form-group mb-2">
                                     <input type="text" required name="fname" id="fname" placeholder="Name" class="form-control border-secondary" />
                                 </div>
-
-                                <div class="form-group mb-2">
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-5 form-group">
                                     <input type="number" required name="phone" id="phone" class="form-control border-secondary" placeholder="Phone Number" />
                                     <span class="text-danger phone-not-found"></span>
                                 </div>
 
-                                <div class="form-group mb-2">
+                                    <div class="col-auto col-md-7 form-group">
                                     <input type="email" required name="email" id="email" class="form-control border-secondary" placeholder="Email" />
+                                </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <select class="form-control mb-2" name="specializationid">
-                                        <option value="">Choose Specialization</option>
+                                    <select class="form-control mb-2 border-secondary" name="specializationid">
+                                        <option value="" class="">Choose Specialization</option>
                                         <?php
                                             $sql1="SELECT * from specialization";
                                             $query1 = $dbh -> prepare($sql1);
@@ -111,23 +112,30 @@ include('../includes/dbconn.php');
                                     <input type="text" required name="username" id="username" class="form-control border-secondary" placeholder="Username" />
                                 </div>
                                 <div class="form-group mb-2">
-                                    <div class="input-group mb-3">
+                                    <div class="input-group">
                                         <input type="password" class="form-control border-secondary" name="password" id="password" placeholder="Password" onfocus="toggleVisibility()" aria-label=" Recipient's username" aria-describedby="button-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" onclick="togglePassword()" type=" button" id="button-addon2">Show</button>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group mb-2">
+                                    <div class="input-group mb-2">
+                                        <input type="password" class="form-control border-secondary" name="cpassword" id="cpassword" placeholder="Confirm Password" onfocus="toggleCVisibility()" aria-label=" Recipient's username" aria-describedby="button-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" onclick="toggleCPassword()" type=" button" id="button-addon3">Show</button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <div class=" text-white form-group mt-3">
+                                <div class=" text-white form-group mt-2">
                                     <input type="submit" value="Submit" name="login" id="login" class="btn btn-dark text-white d-flex justify-content-center m-auto" />
                                 </div>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </body>

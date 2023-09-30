@@ -27,13 +27,12 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-<!doctype html>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-	<title>DAMS - Forgot Page</title>
+	<title>QuickCare | Forgot Page</title>
 
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">

@@ -109,9 +109,9 @@ if (strlen($_SESSION['damsid']) == 0) {
                               <?php echo $row->MobileNumber;
                               ?>
                             </td>
-                            <th>Email</th>
+                            <th>Message</th>
                             <td>
-                              <?php echo $row->Email;
+                              <?php echo $row->Message;
                               ?>
                             </td>
                           </tr>
@@ -158,6 +158,12 @@ if (strlen($_SESSION['damsid']) == 0) {
                             </td>
                           </tr>
                           <tr>
+
+                            <th>Username</th>
+                            <td>
+                              <?php echo $row->username;
+                              ?>
+                            </td>
 
                             <th>Remark</th>
                             <?php if ($row->Remark == "") { ?>
@@ -244,27 +250,28 @@ if (strlen($_SESSION['damsid']) == 0) {
 
                     </div>
 
-                  </div><!-- .widget-body -->
+                  </div>
 
 
-                </div><!-- .widget -->
-              </div><!-- END column -->
+                </div>
+              </div>
 
 
-            </div><!-- .row -->
-        </section><!-- .app-content -->
-      </div><!-- .wrap -->
+            </div>
+        </section>
+      </div>
       <?php
       extract($_POST);
       if (isset($generate)) {
-        mysqli_query($mysqli, "INSERT INTO reports (AppointmentNumber, Name, MobileNumber, Email, AppointmentDate, AppointmentTime, ApplyDate, Status, Remark)
-                  VALUES ('$AppointmentNumber', '$Name', '$MobileNumber', '$Email', '$AppointmentDate', '$AppointmentTime', '$ApplyDate', '$Status', '$Remark')");
+        mysqli_query($mysqli, "INSERT INTO reports (AppointmentNumber, Name, Username, MobileNumber, Email, AppointmentDate, AppointmentTime, ApplyDate, Status, Remark)
+                  VALUES ('$AppointmentNumber', '$Name','$username', '$MobileNumber', '$Email', '$AppointmentDate', '$AppointmentTime', '$ApplyDate', '$Status', '$Remark')");
         $err = "<font color='blue'>Report Generation Failed </font>";
         echo '<script>
       alert("Report Generated");window.location.href="appointment-bwdates.php";
       </script>';
       }
       $eid = $_GET['editid'];
+      $username = $_SESSION['username'];
       $q = mysqli_query($mysqli, "SELECT * FROM appointment WHERE ID=$eid");
       $res = mysqli_fetch_array($q);
 
@@ -273,28 +280,21 @@ if (strlen($_SESSION['damsid']) == 0) {
         <form name="generate" id="generate" class="form-group" method="POST">
           <input type="hidden" name="AppointmentNumber" value="<?php echo $res['AppointmentNumber']; ?>">
           <input type="hidden" name="Name" value="<?php echo $res['Name']; ?>">
+          <input type="hidden" name="username" value="<?php echo $res['username']; ?>">
           <input type="hidden" name="MobileNumber" value="<?php echo $res['MobileNumber']; ?>">
           <input type="hidden" name="Email" value="<?php echo $res['Email']; ?>">
           <input type="hidden" name="AppointmentDate" value="<?php echo $res['AppointmentDate']; ?>">
           <input type="hidden" name="AppointmentTime" value="<?php echo $res['AppointmentTime']; ?>">
           <input type="hidden" name="ApplyDate" value="<?php echo $res['ApplyDate']; ?>">
           <input type="hidden" name="Status" value="<?php echo $res['Status']; ?>">
-          <input type="hidden" name="Remarks" value="<?php echo $res['Remarks']; ?>">
+          <input type="hidden" name="Remark" value="<?php echo $res['Remark']; ?>">
           <button type="submit" name="generate" class="btn btn-success m-l-xl" id="generate">Generate
             Report</button>
         </form>
       </div>
-      <!-- APP FOOTER -->
       <?php include_once('includes/footer.php'); ?>
-      <!-- /#app-footer -->
     </main>
-    <!--========== END app main -->
 
-    <!-- APP CUSTOMIZER -->
-    <?php include_once('includes/customizer.php'); ?>
-
-
-    <!-- build:js assets/js/core.min.js -->
     <script src="libs/bower/jquery/dist/jquery.js"></script>
     <script src="libs/bower/jquery-ui/jquery-ui.min.js"></script>
     <script src="libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
@@ -302,9 +302,6 @@ if (strlen($_SESSION['damsid']) == 0) {
     <script src="libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
     <script src="libs/bower/PACE/pace.min.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js assets/js/app.min.js -->
     <script src="assets/js/library.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/app.js"></script>

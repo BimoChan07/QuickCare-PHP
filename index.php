@@ -96,12 +96,12 @@
                         </div>
                         <div
                             class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                            <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">
-                                All You Need Is A Little Tune
+                            <p class="title-small text-dark opacity-75 mb-0" data-swiper-parallax="-100">
+                                "The journey to good health begins with a single step
                             </p>
-                            <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
+                            <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white opacity-75"
                                 data-swiper-parallax="100">
-                                <span class="text-outline-light"></span>MELODY
+                                <span class="text-outline-light"></span>Scheduling that doctor's appointment.
                             </h2>
                         </div>
                     </div>
@@ -118,11 +118,12 @@
                         </div>
                         <div
                             class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
-                            <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">
-                                Music is the moonlight in the gloomy night of life </p>
-                            <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
+                            <p class="title-small text-secondary opacity-75 mb-0 mt-1" data-swiper-parallax="-100">
+                                Your health is your most valuable possession.
+                            </p>
+                            <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white opacity-75"
                                 data-swiper-parallax="100">
-                                Enjoy&nbsp;<span class="text-outline-light">Life</span>
+                                Don't take it for granted.&nbsp;<span class="text-outline-light"></span>
                             </h2>
                         </div>
                     </div>
@@ -141,10 +142,10 @@
                         <div
                             class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
                             <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">
-                                Good music. Good Friends. Good Vibes.</p>
+                                Your body is your temple; </p>
                             <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
                                 data-swiper-parallax="100">
-                                Adds&nbsp;<span class="text-outline-light">Memories</span>
+                                Keep it Clean and &nbsp;<span class="text-outline-light">Pure</span>
                             </h2>
 
                         </div>
@@ -164,10 +165,10 @@
                         <div
                             class="container position-relative z-index-10 d-flex h-100 align-items-start flex-column justify-content-center">
                             <p class="title-small text-white opacity-75 mb-0" data-swiper-parallax="-100">
-                                Behind every favorite song, there is an untold story </p>
+                                Your health is your wealth. </p>
                             <h2 class="display-3 tracking-wide fw-bold text-uppercase tracking-wide text-white"
                                 data-swiper-parallax="100">
-                                <span class="text-outline-light">Vibes&nbsp;</span>Matters
+                                <span class="text-outline-light">Invest&nbsp;</span>in it.
                             </h2>
                         </div>
                     </div>
@@ -303,7 +304,7 @@
                                 </picture>
                                 <p class="title-small mb-2 text-muted">You can select the desired doctor</p>
                                 <h4 class="lead fw-bold">Doctor Selection</h4>
-                                <a href="appointment.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
+                                <a href="booking.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
                                     Appointment</a>
                             </div>
                         </div>
@@ -316,7 +317,7 @@
                                 </picture>
                                 <p class="title-small mb-2 text-muted">Select your preferred Date and Time </p>
                                 <h4 class="lead fw-bold">Date And Time Selection</h4>
-                                <a href="appointment.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
+                                <a href="booking.php" class="btn btn-dark d-flex m-auto justify-content-center">Book
                                     Appointments</a>
                             </div>
                         </div>

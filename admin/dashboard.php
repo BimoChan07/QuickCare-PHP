@@ -12,13 +12,14 @@ include '../includes/dbconnect.php';
   <title>Admin | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/bootstrap.css" />
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-  <link rel="icon" type="image/x-icon" href="../assets/images/logos/webw.png" />
+  <link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
   <link rel="stylesheet" href="css/adminlte.min.css" />
 
 </head>
@@ -59,7 +60,8 @@ include '../includes/dbconnect.php';
               <div class="icon">
                 <i class="fas fa-docker"></i>
               </div>
-              <a href="./manageprod.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./manageDoctor.php" class="small-box-footer">More info <i
+                  class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -105,7 +107,8 @@ include '../includes/dbconnect.php';
               <div class="icon">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <a href="./viewAppointment.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./viewAppointment.php" class="small-box-footer">More info <i
+                  class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -124,12 +127,14 @@ include '../includes/dbconnect.php';
                   } else {
                     echo '<h4 class="mb-0">No Data Found</h4>';
                   }
-                  ?></h4>
+                  ?>
+                </h4>
               </div>
               <div class="icon">
                 <i class="fas fa-arrow-circle-right"></i>
               </div>
-              <a href="./manageorder.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./manageSpecialization.php" class="small-box-footer">More info <i
+                  class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 	<html lang="en">
 
 	<head>
-		<title>QuickCare - Search</title>
+		<title>QuickCare | Search</title>
 
 		<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -21,6 +21,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<link rel="stylesheet" href="assets/css/bootstrap.css">
 		<link rel="stylesheet" href="assets/css/core.css">
 		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
+
 		<!-- endbuild -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
 		<script src="libs/bower/breakpoints.js/dist/breakpoints.min.js"></script>
@@ -55,7 +57,8 @@ if (strlen($_SESSION['damsid'] == 0)) {
 									<div class="row">
 										<div class="col-lg-9">
 											<input id="searchdata" type="text" name="searchdata" required="true"
-												class="form-control" placeholder="Appointment No./Name/Mobile No.">
+												class="form-control" style="border-radius:5px"
+												placeholder="Appointment No./Name/Mobile No.">
 										</div>
 
 										<div class="col-lg-3 col-md-4 col-6 mx-auto mt-5">
@@ -164,7 +167,6 @@ if (strlen($_SESSION['damsid'] == 0)) {
 
 		</main>
 		<?php include_once('includes/footer.php'); ?>
-		<!-- JAVASCRIPT FILES -->
 		<script src="libs/bower/jquery/dist/jquery.js"></script>
 		<script src="libs/bower/jquery-ui/jquery-ui.min.js"></script>
 		<script src="libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
@@ -174,7 +176,6 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<script src="libs/bower/PACE/pace.min.js"></script>
 		<!-- endbuild -->
 
-		<!-- build:js assets/js/app.min.js -->
 		<script src="assets/js/library.js"></script>
 		<script src="assets/js/plugins.js"></script>
 		<script src="assets/js/app.js"></script>

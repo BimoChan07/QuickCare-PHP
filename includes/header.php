@@ -9,7 +9,7 @@
             <div class="container px-4 w-75">
                 <div class="navbar-brand">
                     <a href="./index.php"><img class="img-fluid" width="18%" src="./assets/images/logos/quickcare.png"
-                            href="./index.php" alt="Strumo" /></a>
+                            href="./index.php" alt="QuickCare" /></a>
                     <a class="navbar-brand text-dark a" style="font-family:'Trebuchet MS'; font-size:30px;"
                         href="./index.php"><strong class="hov">QuickCare</strong></a>
                 </div>
@@ -83,6 +83,7 @@
 
                                 </h6></a>
                                 <div class="dropdown-menu border-secondary" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="./viewReport.php">Report</a>
                                     <a class="dropdown-item" href="./useredit.php">Edit Profile</a>
                                     <a class="dropdown-item" href="./logout.php">Logout</a>
                                 </div>

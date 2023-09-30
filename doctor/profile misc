@@ -1,0 +1,25 @@
+<div class="form-group">
+                          <label for="email2" class="col-sm-3 control-label">Specialization:</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="specializationid">
+                              <option value="<?php echo htmlentities($row->ID); ?>">
+                                <?php echo htmlentities($row->sssp); ?>
+                              </option>
+                              <?php
+                              $sql1 = "SELECT * from specialization";
+                              $query1 = $dbh->prepare($sql1);
+                              $query1->execute();
+                              $results1 = $query1->fetchAll(PDO::FETCH_OBJ);
+
+                              $cnt = 1;
+                              if ($query1->rowCount() > 0) {
+                                foreach ($results1 as $row1) { ?>
+                                  <option value="<?php echo htmlentities($row1->ID); ?>">
+                                    <?php echo htmlentities($row1->Specialization); ?>
+                                  </option>
+                                  <?php $cnt = $cnt + 1;
+                                }
+                              } ?>
+                            </select>
+                          </div>
+                        </div>

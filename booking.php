@@ -5,9 +5,8 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
-    $username = $_POST['username'];
+    $username = $_SESSION['username'];
     $mobnum = $_POST['phone'];
-    $email = $_POST['email'];
     $appdate = $_POST['date'];
     $aaptime = $_POST['time'];
     $specialization = $_POST['specialization'];
@@ -75,7 +74,6 @@ $row = mysqli_fetch_assoc($q);
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/bootstrap.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -90,7 +88,7 @@ $row = mysqli_fetch_assoc($q);
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
@@ -114,82 +112,97 @@ $row = mysqli_fetch_assoc($q);
     </script>
 </head>
 
-<body>
-    <?php
-    include './includes/header.php';
-    ?>
-    <div class="container">
+<body class="font">
 
+    <div class="container mt-4">
         <div class="row">
-
-            <div class="col-lg-8 col-12 mx-auto">
+            <div class="col-lg-5 col-12 mx-auto">
                 <div class="booking-form">
                     <?php
                     if (!$_SESSION['username']) {
                         echo "<h2 style='color:red'>No appointment found !!!</h2>";
                     } else {
                         ?>
-                        <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
 
-                        <form role="form" method="post">
+                        <form role="form" method="POST" class="border border-1 border-secondary" style="border-radius:15px">
                             <div class="container">
-                                <div class="mb-3">
+                                <span class="d-flex justify-content-end mt-3">
+                                    <a href="./index.php" class="myA">Go Back</a>
+                                </span>
+                                <h2 class="text-center mb-lg-3 mb-2">Book Now</h2>
+                                <div class="mb-2">
                                     <input type="text" name="name" id="name" value="<?php echo $row['fullname'] ?>"
                                         class="form-control" placeholder="Full name" required='true'>
                                 </div>
-
-                                <div class="mb-3">
-                                    <input type="number" name="age" id="age" pattern="" class="form-control"
-                                        placeholder="Age" value="<?php echo $row['age'] ?>" required='true'>
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group">
+                                        <input type="number" name="age" id="age" pattern="" class="form-control"
+                                            placeholder="Age" value="<?php echo $row['age'] ?>" required='true'>
+                                    </div>
+                                    <div class="col-auto col-md-6 form-group">
+                                        <input type="number" name="phone" id="phone" class="form-control"
+                                            placeholder="Phone Number" value="<?php echo $row['phone'] ?>" maxlength="10">
+                                    </div>
                                 </div>
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group">
+                                        <input type="email" name="email" id="email" pattern="" class="form-control"
+                                            placeholder="Email" value="<?php echo $row['email'] ?>" required='true'>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <input type="telephone" name="phone" id="phone" class="form-control"
-                                        placeholder="Enter Phone Number" value="<?php echo $row['phone'] ?>" maxlength="10">
+                                    <div class="col-auto col-md-6 form-group">
+                                        <input type="text" name="username" id="username" placeholder="Username"
+                                            class="form-control" value="<?php echo $row['username'] ?>">
+                                    </div>
                                 </div>
-
-                                <div class="mb-3">
-                                    <input type="date" name="date" id="date" value="" class="form-control">
-
-                                </div>
-
-                                <div class="mb-3">
-                                    <input type="time" name="time" id="time" value="" class="form-control">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-auto col-md-6 form-group"> <select onChange="getdoctors(this.value);"
-                                            name="specialization" id="specialization" class="form-control" required>
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group">
+                                        <select onChange="getdoctors(this.value);" name="specialization" id="specialization"
+                                            class="form-control" required>
                                             <option value="">Select specialization</option>
-                                            <!--- Fetching States--->
-                                        <?php
-                                        $sql = "SELECT * FROM specialization";
-                                        $stmt = $dbh->query($sql);
-                                        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                        while ($row = $stmt->fetch()) {
-                                            ?>
-                                        <option value="<?php echo $row['ID']; ?>">
-                                            <?php echo $row['Specialization']; ?>
-                                        </option>
-                                        <?php } ?>
-                                    </select>
+                                            <?php
+                                            $sql = "SELECT * FROM specialization";
+                                            $stmt = $dbh->query($sql);
+                                            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                            while ($row = $stmt->fetch()) {
+                                                ?>
+                                                <option value="<?php echo $row['ID']; ?>">
+                                                    <?php echo $row['Specialization']; ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <select name="doctorlist" id="doctorlist" class="form-control">
+                                            <option value="">Select Doctor</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col-auto col-md-6 form-group">
-                                    <select name="doctorlist" id="doctorlist" class="form-control">
-                                        <option value="">Select Doctor</option>
-                                    </select>
+
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group ">
+                                        <h6 class="mx-auto"> Enter booking date:</h6><input type="date" name="date"
+                                            id="date" value="" class="form-control" placeholder="Enter your booking date">
+
+                                    </div>
+
+                                    <div class="col-auto col-md-6 form-group">
+                                        <h6 class="mx-auto">Enter booking time:</h6><input type="time" name="time" id="time"
+                                            value="" class="form-control">
+                                    </div>
                                 </div>
-                                <div class="col-12 mb-3">
+
+                                <div class="form-group mb-3">
                                     <textarea class="form-control" rows="5" id="message" name="message"
                                         placeholder="Additional Message"></textarea>
                                 </div>
 
-                                <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                <div class="col-lg-3 col-md-4 col-6 mx-auto mb-2">
                                     <button type="submit" class="form-control btn btn-outline-dark" name="submit"
                                         id="submit-button">Book Now</button>
                                 </div>
                             </div>
-                    </form>
+                        </form>
                     <?php } ?>
 
                 </div>
@@ -199,7 +212,6 @@ $row = mysqli_fetch_assoc($q);
     </div>
     </section>
     </main>
-    <?php include_once('includes/footer.php'); ?>
     <!-- JAVASCRIPT FILES -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

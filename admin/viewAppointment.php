@@ -9,17 +9,18 @@ include '../includes/dbconnect.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strumo | View Appointment</title>
+    <title>QuickCare | View Appointment</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/adminlte.min.css" />
-    <link rel="icon" type="image/x-icon" href="../assets/images/logos/webw.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
 
 </head>
 
@@ -31,14 +32,7 @@ include '../includes/dbconnect.php';
     <!-- Content Wrapper. Contains page content -->
     <div class="container">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container d-flex justify-content-center font">
 
-                <b>
-                    <h1>View Appointment</h1>
-                </b>
-            </div>
-        </section>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -53,11 +47,11 @@ include '../includes/dbconnect.php';
             if (!$rr) {
                 echo "<h2 style='color:red'>No any appointment found !!!</h2>";
             } else {
-            ?>
-                <h2>All Doctors</h2>
+                ?>
+                <h2 class="font mt-1 mb-3">All Appointment</h2>
 
                 <table class="table table-bordered table-hover mb-2">
-                  
+
                     <tr class=" success">
                         <th>S.No</th>
                         <th>Appointment Number</th>
@@ -81,26 +75,26 @@ include '../includes/dbconnect.php';
                         echo "<tr>";
                         echo "<td>" . $i . "</td>";
                         echo "<td>" . $row['AppointmentNumber'] . "</td>";
-                    ?>
-                            <?php
+                        ?>
+                        <?php
 
-                            echo "<td>" . $row['Name'] . "</td>";
-                            echo "<td>" . $row['MobileNumber'] . "</td>";
-                            echo "<td>" . $row['Email'] . "</td>";
-                            echo "<td>" . $row['AppointmentDate'] . "</td>";
-                            echo "<td>" . $row['AppointmentTime'] . "</td>";
-                            echo "<td>" . $row['Specialization'] . "</td>";
-                            echo "<td>" . $row['Doctor'] . "</td>";
-                            echo "<td>" . $row['Message'] . "</td>";
-                            echo "<td>" . $row['ApplyDate'] . "</td>";
-                            echo "<td>" . $row['Remark'] . "</td>";
-                            echo "<td>" . $row['Status'] . "</td>";
-                            echo "<td>" . $row['UpdationDate'] . "</td>";
-                            ?>
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['MobileNumber'] . "</td>";
+                        echo "<td>" . $row['Email'] . "</td>";
+                        echo "<td>" . $row['AppointmentDate'] . "</td>";
+                        echo "<td>" . $row['AppointmentTime'] . "</td>";
+                        echo "<td>" . $row['Specialization'] . "</td>";
+                        echo "<td>" . $row['Doctor'] . "</td>";
+                        echo "<td>" . $row['Message'] . "</td>";
+                        echo "<td>" . $row['ApplyDate'] . "</td>";
+                        echo "<td>" . $row['Remark'] . "</td>";
+                        echo "<td>" . $row['Status'] . "</td>";
+                        echo "<td>" . $row['UpdationDate'] . "</td>";
+                        ?>
                         <!-- <td><a href="javascript:DeleteProducts('<?php echo $row['id']; ?>')" class="btn btn-danger">Delete</a></td> -->
 
-                    <?php
-                        
+                        <?php
+
                         $i++;
                     }
                     ?>
@@ -115,9 +109,9 @@ include '../includes/dbconnect.php';
     ?>
     <script>
         function DeleteProducts(id) {
-            if (confirm("Do you want to delete this product?")) {
-                alert("Product Deleted");
-                window.location.href = "deleteprod.php?id=" + id;
+            if (confirm("Do you want to delete the doctor?")) {
+                alert("Dooctor Deleted");
+                window.location.href = "deleteDoctor.php?id=" + id;
             }
         }
     </script>

@@ -4,7 +4,7 @@ session_start();
 
 extract($_POST);
 if (isset($update)) {
-    mysqli_query($mysqli, "UPDATE users SET fullname='$fname', email='$email',address='$address',phone='$phone';username='$username',password='$password' where username='" . $_SESSION['username'] . "'");
+    mysqli_query($mysqli, "UPDATE users SET fullname='$fname', email='$email',age='$age',phone='$phone',username='$username',password='$password' where username='" . $_SESSION['username'] . "'");
     $err = "<font color='blue'>Profile updated </font>";
     echo '<script>
 	alert("Profile Updated");
@@ -24,8 +24,8 @@ $res = mysqli_fetch_array($q);
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strumo | Edit Profile</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/logos/webw.png" />
+    <title>QuickCare | User Edit Profile</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/quickcarew.png" />
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -53,7 +53,8 @@ $res = mysqli_fetch_array($q);
                             <a href="./index.php" class="myA d-flex justify-content-end">Go back</a>
                             <form method="POST" class="mx-3 mx-md-5">
 
-                                <img src="./assets/images/logos/quickcare.png" width="20%" alt="Strumo" class="center">
+                                <img src="./assets/images/logos/quickcare.png" width="20%" alt="QuickCare"
+                                    class="center">
                                 <h5 class="text-dark`x` d-flex justify-content-center mt-1 mb-2">Edit Profile</h5>
 
                                 <div class="form-group mb-2">
@@ -70,7 +71,7 @@ $res = mysqli_fetch_array($q);
 
                                 <div class="form-group mb-2">
                                     <b>Enter New Age</b>
-                                    <input type="text" name="address" class="border-secondary form-control"
+                                    <input type="text" name="age" class="border-secondary form-control"
                                         value="<?php echo $res['age']; ?>">
                                 </div>
 
@@ -78,6 +79,11 @@ $res = mysqli_fetch_array($q);
                                     <b>Enter New Phone No</b>
                                     <input type="text" name="phone" class="border-secondary form-control"
                                         value="<?php echo $res['phone']; ?>">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <b>Enter New Email</b>
+                                    <input type="email" name="email" class="border-secondary form-control"
+                                        value="<?php echo $res['email']; ?>">
                                 </div>
 
                                 <div class="form-group mb-2">
