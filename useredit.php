@@ -50,7 +50,8 @@ $res = mysqli_fetch_array($q);
                 <div class="d-flex justify-content-center m-auto mt-1 ">
                     <div class="card w-50 wid text-black border" style="border-radius: 21px;">
                         <div class="card-body">
-                            <a href="./index.php" class="myA d-flex justify-content-end">Go back</a>
+                            <a href="./index.php" class="myA d-flex justify-content-end"><i
+                                    class="bi bi-arrow-left"></i></a>
                             <form method="POST" class="mx-3 mx-md-5">
 
                                 <img src="./assets/images/logos/quickcare.png" width="20%" alt="QuickCare"

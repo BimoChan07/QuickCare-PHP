@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include('./includes/dbconn.php');
+include('./includes/dbconnect.php');
 if (strlen($_SESSION['damsid'] == 0)) {
 	header('location:logout.php');
 } else {
@@ -54,101 +55,103 @@ if (strlen($_SESSION['damsid'] == 0)) {
 						<!-- DOM dataTable -->
 						<div class="col-md-12">
 							<div class="widget" style="border-radius:15px">
+
 								<header class="widget-header">
 									<h4 class="widget-title">New Appointment</h4>
 								</header><!-- .widget-header -->
-								<hr class="widget-separator">
-								<div class="widget-body">
-									<div class="table-responsive">
-										<table
-											class="table table-bordered table-hover js-basic-example dataTable table-custom">
-											<thead>
-												<tr>
-													<th>S.No</th>
-													<th>Appointment Number</th>
-													<th>Patient Name</th>
-													<th>Mobile Number</th>
-													<th>Email</th>
-													<th>Status</th>
-													<th>Action</th>
+								<div class="widget-body d-flex m-auto justify-content-center">
 
-												</tr>
-											</thead>
+									Sort by:&nbsp;<select name="urgency" onchange="sortAppointments()" class="urgency">
+										<option value="All">All</option>
+										<option value="Normal">Normal</option>
+										<option value="Urgent">Urgent</option>
+									</select>
+									<hr class="widget-separator">
+									<div class="widget-body">
+										<div class="table-responsive">
+											<table
+												class="table table-bordered table-hover js-basic-example dataTable table-custom">
 
-											<tbody>
-												<?php
-												$docid = $_SESSION['damsid'];
-												$sql = "SELECT * from appointment where Status is null && Doctor=:docid";
-												$query = $dbh->prepare($sql);
-												$query->bindParam(':docid', $docid, PDO::PARAM_STR);
-												$query->execute();
-												$results = $query->fetchAll(PDO::FETCH_OBJ);
+												<thead>
+													<tr>
+														<th>S.No</th>
+														<th>Appointment Number</th>
+														<th>Patient Name</th>
+														<th>Mobile Number</th>
+														<th>Urgency</th>
+														<th>Status</th>
+														<th>Action</th>
 
-												$cnt = 1;
-												if ($query->rowCount() > 0) {
-													foreach ($results as $row) { ?>
-														<tr>
-															<td>
-																<?php echo htmlentities($cnt); ?>
-															</td>
-															<td>
-																<?php echo htmlentities($row->AppointmentNumber); ?>
-															</td>
-															<td>
-																<?php echo htmlentities($row->Name); ?>
-															</td>
-															<td>
-																<?php echo htmlentities($row->MobileNumber); ?>
-															</td>
-															<td>
-																<?php echo htmlentities($row->Email); ?>
-															</td>
-															<?php if ($row->Status == "") { ?>
+													</tr>
+												</thead>
 
+												<tbody id="appointmentTableBody" name="appointmentTableBody">
+													<?php
+													$docid = $_SESSION['damsid'];
+													$sql = "SELECT * from appointment where Status is null && Doctor=:docid";
+													$query = $dbh->prepare($sql);
+													$query->bindParam(':docid', $docid, PDO::PARAM_STR);
+													$query->execute();
+													$results = $query->fetchAll(PDO::FETCH_OBJ);
+
+													$cnt = 1;
+													if ($query->rowCount() > 0) {
+														foreach ($results as $row) { ?>
+
+
+															<tr class="<?php echo $row->priority ?>">
 																<td>
-																	<?php echo "Not Updated Yet"; ?>
+																	<?php echo htmlentities($cnt); ?>
 																</td>
-															<?php } else { ?>
 																<td>
-																	<?php echo htmlentities($row->Status); ?>
+																	<?php echo htmlentities($row->AppointmentNumber); ?>
 																</td>
-															<?php } ?>
+																<td>
+																	<?php echo htmlentities($row->Name); ?>
+																</td>
+																<td>
+																	<?php echo htmlentities($row->MobileNumber); ?>
+																</td>
+																<td class="urgency">
+																	<?php echo htmlentities($row->priority); ?>
+																</td>
+																<?php if ($row->Status == "") { ?>
 
-															<td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&&aptid=<?php echo htmlentities($row->AppointmentNumber); ?>"
-																	class="btn btn-primary">View</a></td>
+																	<td>
+																		<?php echo "Not Updated Yet"; ?>
+																	</td>
+																<?php } else { ?>
+																	<td>
+																		<?php echo htmlentities($row->Status); ?>
+																	</td>
+																<?php } ?>
 
-														</tr>
-														<?php $cnt = $cnt + 1;
-													}
-												} ?>
+																<td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&&aptid=<?php echo htmlentities($row->AppointmentNumber); ?>"
+																		class="btn btn-primary">View</a></td>
 
-											</tbody>
-											<tfoot>
-												<tr>
-													<th>S.No</th>
-													<th>Appointment Number</th>
-													<th>Patient Name</th>
-													<th>Mobile Number</th>
-													<th>Email</th>
-													<th>Status</th>
-													<th>Action</th>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div><!-- .widget-body -->
-							</div><!-- .widget -->
-						</div><!-- END column -->
+															</tr>
+															<?php $cnt = $cnt + 1;
+														}
+													} ?>
+
+												</tbody>
+												<tfoot>
+
+												</tfoot>
+											</table>
+										</div>
+									</div><!-- .widget-body -->
+								</div><!-- .widget -->
+							</div><!-- END column -->
 
 
-					</div><!-- .row -->
+						</div><!-- .row -->
 				</section><!-- .app-content -->
 			</div><!-- .wrap -->
 			<!-- APP FOOTER -->
 			<?php include_once('includes/footer.php'); ?>
 			<!-- /#app-footer -->
 		</main>
-
 
 		<script src="libs/bower/jquery/dist/jquery.js"></script>
 		<script src="libs/bower/jquery-ui/jquery-ui.min.js"></script>
@@ -163,6 +166,27 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<script src="libs/bower/moment/moment.js"></script>
 		<script src="libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
 		<script src="assets/js/fullcalendar.js"></script>
+		<script>
+			const sortAppointments = () => {
+				const select = document.querySelector('select[name="urgency"]');
+				const value = select.value;
+				const rows = document.querySelectorAll('#appointmentTableBody tr');
+				rows.forEach(row => {
+					console.log('row name', row.className)
+					const urgency = row.querySelector('.urgency').textContent;
+					if (value === row.className) {
+						row.style.display = 'table-row';
+					}
+					else if (value === "All") {
+						row.style.display = 'table-row';
+
+					}
+					else {
+						row.style.display = 'none';
+					}
+				});
+			}
+		</script>
 	</body>
 
 	</html>

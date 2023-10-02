@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
     $appdate = $_POST['date'];
     $aaptime = $_POST['time'];
     $specialization = $_POST['specialization'];
+    $priority = $_POST['priority'];
     $doctorlist = $_POST['doctorlist'];
     $message = $_POST['message'];
     $aptnumber = mt_rand(100000000, 999999999);
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
     if ($appdate <= $cdate) {
         echo '<script>alert("Appointment date must be greater than todays date")</script>';
     } else {
-        $sql = "insert into appointment(AppointmentNumber,Name,username,MobileNumber,Email,AppointmentDate,AppointmentTime,Specialization,Doctor,Message)values(:aptnumber,:name,:username,:mobnum,:email,:appdate,:aaptime,:specialization,:doctorlist,:message)";
+        $sql = "INSERT INTO appointment(AppointmentNumber,Name,username,MobileNumber,Email,AppointmentDate,AppointmentTime,Specialization,Doctor,Priority,Message)values(:aptnumber,:name,:username,:mobnum,:email,:appdate,:aaptime,:specialization,:doctorlist,:priority,:message)";
         $query = $dbh->prepare($sql);
         $query->bindParam(':aptnumber', $aptnumber, PDO::PARAM_STR);
         $query->bindParam(':name', $name, PDO::PARAM_STR);
@@ -28,13 +29,14 @@ if (isset($_POST['submit'])) {
         $query->bindParam(':appdate', $appdate, PDO::PARAM_STR);
         $query->bindParam(':aaptime', $aaptime, PDO::PARAM_STR);
         $query->bindParam(':specialization', $specialization, PDO::PARAM_STR);
+        $query->bindParam(':priority', $priority, PDO::PARAM_STR);
         $query->bindParam(':doctorlist', $doctorlist, PDO::PARAM_STR);
         $query->bindParam(':message', $message, PDO::PARAM_STR);
 
         $query->execute();
         $LastInsertId = $dbh->lastInsertId();
         if ($LastInsertId > 0) {
-            echo '<script>alert("Your Appointment Request Has Been Send. We Will Contact You Soon")</script>';
+            echo '<script>alert("Your Appointment Request Has Been Send.")</script>';
             echo "<script>window.location.href ='index.php'</script>";
         } else {
             echo '<script>alert("Something Went Wrong. Please try again")</script>';
@@ -127,12 +129,18 @@ $row = mysqli_fetch_assoc($q);
                         <form role="form" method="POST" class="border border-1 border-secondary" style="border-radius:15px">
                             <div class="container">
                                 <span class="d-flex justify-content-end mt-3">
-                                    <a href="./index.php" class="myA">Go Back</a>
+                                    <a href="./index.php" class="myA"><i class="bi bi-arrow-left"></i></a>
                                 </span>
                                 <h2 class="text-center mb-lg-3 mb-2">Book Now</h2>
-                                <div class="mb-2">
-                                    <input type="text" name="name" id="name" value="<?php echo $row['fullname'] ?>"
-                                        class="form-control" placeholder="Full name" required='true'>
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group"> <input type="text" name="name" id="name"
+                                            value="<?php echo $row['fullname'] ?>" class="form-control"
+                                            placeholder="Full name" required='true'>
+                                    </div>
+                                    <div class="col-auto col-md-6 form-group">
+                                        <input type="text" name="username" id="username" placeholder="Username"
+                                            class="form-control" value="<?php echo $row['username'] ?>">
+                                    </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-auto col-md-6 form-group">
@@ -146,13 +154,16 @@ $row = mysqli_fetch_assoc($q);
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-auto col-md-6 form-group">
-                                        <input type="email" name="email" id="email" pattern="" class="form-control"
-                                            placeholder="Email" value="<?php echo $row['email'] ?>" required='true'>
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email"
+                                            value="<?php echo $row['email'] ?>" required='true'>
                                     </div>
-
                                     <div class="col-auto col-md-6 form-group">
-                                        <input type="text" name="username" id="username" placeholder="Username"
-                                            class="form-control" value="<?php echo $row['username'] ?>">
+                                        <select name="priority" id="proirity" class="form-control" required>
+                                            <option value="">Appointment Type</option>
+                                            <option value="All">All</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Urgent">Urgent</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -181,8 +192,9 @@ $row = mysqli_fetch_assoc($q);
 
                                 <div class="row mb-2">
                                     <div class="col-auto col-md-6 form-group ">
-                                        <h6 class="mx-auto"> Enter booking date:</h6><input type="date" name="date"
-                                            id="date" value="" class="form-control" placeholder="Enter your booking date">
+                                        <h6 class="mx-auto"> Enter booking date:</h6>
+                                        <input type="date" name="date" id="date" value="" class="form-control"
+                                            placeholder="Enter your booking date">
 
                                     </div>
 
@@ -193,7 +205,7 @@ $row = mysqli_fetch_assoc($q);
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <textarea class="form-control" rows="5" id="message" name="message"
+                                    <textarea class="form-control" rows="4" id="message" name="message"
                                         placeholder="Additional Message"></textarea>
                                 </div>
 
