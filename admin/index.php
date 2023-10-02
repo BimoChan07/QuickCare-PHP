@@ -10,7 +10,7 @@ if (isset($login)) {
     $row = mysqli_num_rows($que);
     if ($row) {
         $_SESSION['admin'] = $user;
-        echo "<script>alert('Admin Login Successful');window.location.href='./dashboard.php';</script>";
+        echo "<script>window.location.href='./dashboard.php';</script>";
     } else {
         $err = "<center><font style='Loco' color='red'>Invalid Username and Password!!</font></center>";
     }

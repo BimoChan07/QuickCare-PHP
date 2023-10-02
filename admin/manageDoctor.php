@@ -55,6 +55,7 @@ include '../includes/dbconnect.php';
                     <tr class=" success">
                         <th>S.No</th>
                         <th>Fullname</th>
+                        <th>License</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Specialization</th>
@@ -69,11 +70,13 @@ include '../includes/dbconnect.php';
                         echo "<tr>";
                         echo "<td>" . $i . "</td>";
                         echo "<td>" . $row['fullname'] . "</td>";
+                        echo "<td class='w-25 '><img class='img-fluid w-75'
+                                    src='../admin/uploads/license/$row[license]?>' alt='' /></td>";
+                        echo "<td>" . $row['phone'] . "</td>";
                         ?>
                         <?php
-
-                        echo "<td>" . $row['phone'] . "</td>";
                         echo "<td>" . $row['email'] . "</td>";
+
                         echo "<td>" . $row['specialization'] . "</td>";
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['CreationDate'] . "</td>";

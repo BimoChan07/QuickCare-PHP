@@ -43,6 +43,12 @@
                 Specialization
             </a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block hov">
+            <a href="./verifyDoctor.php" class="text-white-50 nav-link">
+                <i class="nav-icon fas fa-check-circle"></i>
+                Verify Doctor
+            </a>
+        </li>
 
     </ul>
     <!-- Right navbar links -->

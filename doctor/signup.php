@@ -72,7 +72,7 @@ include('../includes/dbconn.php');
                             </span>
                             <img class="d-flex justify-content-center m-auto img-fluid" width="35%" src="../assets/images/logos/quickcare.png" />
                             <h4 class="text-center mb-3">Signup as a Doctor</h4>
-                            <form action="regdoc.php" role="form" name="form" class="mx-1 mx-md-4" id="form" method="POST" enctype="multipart/form-data">
+                            <form action="reqAdminSignup.php" role="form" name="form" class="mx-1 mx-md-4" id="form" method="POST" enctype="multipart/form-data">
 
                                 <div class="form-group mb-2">
                                     <input type="text" required name="fname" id="fname" placeholder="Name" class="form-control border-secondary" />
@@ -86,8 +86,13 @@ include('../includes/dbconn.php');
                                     <div class="col-auto col-md-7 form-group">
                                     <input type="email" required name="email" id="email" class="form-control border-secondary" placeholder="Email" />
                                 </div>
+
+                                <div class="form-group">
+                                    <label>License Photo</label>
+                                    <input type="file" name="license" id="license" class="form-control border-secondary mb-2"
+                                        required placeholder="License Photo">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <select class="form-control mb-2 border-secondary" name="specializationid">
                                         <option value="" class="">Choose Specialization</option>
