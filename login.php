@@ -65,7 +65,7 @@
                             <form name="myForm" class="font" method="POST" action="./logdb.php">
                                 <img class="d-flex justify-content-center m-auto img-fluid" width="40%"
                                     src="./assets/images/logos/quickcare.png" />
-                                <h3 class="text-center mb-3 fs-2">Login</h3>
+                                <h4 class="text-center mb-2 text-bold">Login as Patient</h4>
                                 <div class="form-group">
                                     <label for="username">
                                         <h5>Username: <span class=" text-danger">*</span></h5>
@@ -75,7 +75,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password" class="mt-3">
+                                    <label for="password" class="mt-2">
                                         <h5>Password: <span class="text-danger">*</span></h5>
                                     </label>
                                     <div class="input-group mb-1">
@@ -95,7 +95,7 @@
                                     <button name="login" id="login"
                                         class="d-flex m-auto justify-content-center btn btn-dark text-white form group mt-3">Login</button>
                                 </div>
-                                <div class="form-group d-flex justify-content-center mt-3">
+                                <div class="form-group d-flex justify-content-center mt-2">
                                     Don't have an account? &nbsp
                                     <a href="./signup.php" class="myA">Sign Up</a>
                                 </div>

@@ -73,7 +73,7 @@
                             </span>
                             <img class="d-flex justify-content-center m-auto img-fluid" width="35%"
                                 src="./assets/images/logos/quickcare.png" />
-                            <h4 class="text-center mb-3">Signup</h4>
+                            <h4 class="text-center mb-3">Signup as Patient</h4>
                             <form action="regdb.php" name="form" class="mx-1 mx-md-4" id="form" method="POST"
                                 enctype="multipart/form-data">
 

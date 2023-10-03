@@ -5,8 +5,8 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $age = $_POST['age'];
 $username = $_POST['username'];
-$password = $_POST['password'];
-$cpassword = $_POST['cpassword'];
+$password = md5($_POST['password']);
+$cpassword = md5($_POST['cpassword']);
 
 if ($cpassword != $password) {
   echo "<script>alert('Passwords do not match');

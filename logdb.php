@@ -5,7 +5,7 @@ extract($_POST);
 
 if (isset($login)) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     // $query = mysqli_query($mysqli, "SELECT * FROM users WHERE username='$username' AND password='$password'");
 
     $query = mysqli_query($mysqli, "SELECT username, password FROM users WHERE username ='$username' AND password = '$password'");
