@@ -36,28 +36,31 @@
   <title>QuickCare | Login</title>
 </head>
 
-<body class="font">
-  <?php
-  include './includes/header.php';
-  ?>
-  <div class="container-sm w-50 mt-5">
-    <div class="row">
+<body class="font" background="./assets/images/banners/123.jpg">
+  <div class="container mt-10 w-50 ">
+    <div class="row p-5 mt-9">
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card zoom opacity-75" style="border-radius:11px">
           <div class="card-body ">
             <h5 class="card-title  d-flex m-auto justify-content-center">Login as a Doctor</h5>
-            <img src="./assets/images/favicon/doctor.png" class="rounded mx-auto d-block mt-4 mb-4" width="60%" />
-            <a href="./doctor/login.php" class="btn btn-outline-dark d-flex m-auto justify-content-center">Login</a>
+            <a href="./doctor/login.php">
+              <img src="./assets/images/favicon/doctor.png" class="mx-auto d-block mt-4 mb-4" width="69%" />
+            </a>
+            <a href="./doctor/login.php" style="border-radius:5px"
+              class="btn btn-outline-dark d-flex m-auto justify-content-center">Login</a>
           </div>
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card zoom opacity-75" style="border-radius:11px">
           <div class="card-body">
             <h5 class="card-title d-flex m-auto justify-content-center">Login as a Patient</h5>
-            <img src="./assets/images/favicon/user.png" class="rounded mx-auto d-block mt-4 mb-4" width="60%">
+            <a href="./login.php"><img src="./assets/images/favicon/user.png" class="rounded mx-auto d-block mt-4 mb-4"
+                width="69%">
+            </a>
 
-            <a href="./login.php" class="btn btn-outline-dark d-flex m-auto justify-content-center">Login</a>
+            <a href="./login.php" style="border-radius:5px"
+              class="btn btn-outline-dark d-flex m-auto justify-content-center">Login</a>
           </div>
         </div>
       </div>

@@ -114,11 +114,11 @@ $row = mysqli_fetch_assoc($q);
     </script>
 </head>
 
-<body class="font">
+<body class="font" background="./assets/images/banners/123.jpg">
 
-    <div class="container mt-4">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-12 mx-auto">
+            <div class="col-lg-5 col-12 mx-auto mt-5">
                 <div class="booking-form">
                     <?php
                     if (!$_SESSION['username']) {
@@ -126,7 +126,8 @@ $row = mysqli_fetch_assoc($q);
                     } else {
                         ?>
 
-                        <form role="form" method="POST" class="border border-1 border-secondary" style="border-radius:15px">
+                        <form role="form" method="POST" class="border p-2 border-1 bg-white opacity-75 border-secondary"
+                            style="border-radius:15px">
                             <div class="container">
                                 <span class="d-flex justify-content-end mt-3">
                                     <a href="./index.php" class="myA"><i class="bi bi-arrow-left"></i></a>
@@ -205,7 +206,7 @@ $row = mysqli_fetch_assoc($q);
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <textarea class="form-control" rows="4" id="message" name="message"
+                                    <textarea class="form-control" rows="2" id="message" name="message"
                                         placeholder="Additional Message"></textarea>
                                 </div>
 
@@ -222,8 +223,6 @@ $row = mysqli_fetch_assoc($q);
 
         </div>
     </div>
-    </section>
-    </main>
     <!-- JAVASCRIPT FILES -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

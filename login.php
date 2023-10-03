@@ -44,14 +44,14 @@
 
 </head>
 
-<body class="font" background="./assets/images/banners/opa.png">
+<body class="font" background="./assets/images/banners/123.jpg">
 
     <section class="">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center mt-3">
                 <div class="col-md-5 d-flex justify-content-center m-auto">
-                    <div class="card mt-3 wid text-black border" style="border-radius: 20px;">
-                        <div class="card-body p-4 m-0">
+                    <div class="card text-black border m-5 opacity-75" style="border-radius: 20px;">
+                        <div class="card-body px-4 ">
                             <span class="d-flex justify-content-end">
                                 <a href="./index.php" class="myA">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor"

@@ -38,7 +38,7 @@ $res = mysqli_fetch_array($q);
 
 </head>
 
-<body class="bg-dark">
+<body class="font" background="./assets/images/banners/123.jpg">
     <?php
     // require './includes/menu.php';
     ?>
@@ -47,14 +47,14 @@ $res = mysqli_fetch_array($q);
         <div class="container font">
             <div class="d-flex justify-content-center align-items-center">
 
-                <div class="d-flex justify-content-center m-auto mt-1 ">
-                    <div class="card w-50 wid text-black border" style="border-radius: 21px;">
-                        <div class="card-body">
+                <div class="col-5 d-flex justify-content-center">
+                    <div class="card text-black border opacity-75 m-4" style="border-radius: 25px;">
+                        <div class="card-body px-4 py-0">
                             <a href="./index.php" class="myA d-flex justify-content-end"><i
                                     class="bi bi-arrow-left"></i></a>
-                            <form method="POST" class="mx-3 mx-md-5">
+                            <form method="POST" class="">
 
-                                <img src="./assets/images/logos/quickcare.png" width="20%" alt="QuickCare"
+                                <img src="./assets/images/logos/quickcare.png" width="25%" alt="QuickCare"
                                     class="center">
                                 <h5 class="text-dark`x` d-flex justify-content-center mt-1 mb-2">Edit Profile</h5>
 
@@ -65,44 +65,48 @@ $res = mysqli_fetch_array($q);
                                 </div>
 
                                 <div class="form-group mb-2">
-                                    <b>Enter New Name</b>
+                                    <b>New Name</b>
                                     <input type="text" name="fname" class="border-secondary form-control"
                                         value="<?php echo $res['fullname']; ?>">
                                 </div>
 
-                                <div class="form-group mb-2">
-                                    <b>Enter New Age</b>
-                                    <input type="text" name="age" class="border-secondary form-control"
-                                        value="<?php echo $res['age']; ?>">
-                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-auto col-md-5 form-group">
+                                        <b>New Age</b>
+                                        <input type="text" name="age" class="border-secondary form-control"
+                                            value="<?php echo $res['age']; ?>">
+                                    </div>
+                                    <div class="col-auto col-md-7 form-group">
 
-                                <div class="form-group mb-2">
-                                    <b>Enter New Phone No</b>
-                                    <input type="text" name="phone" class="border-secondary form-control"
-                                        value="<?php echo $res['phone']; ?>">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <b>Enter New Email</b>
-                                    <input type="email" name="email" class="border-secondary form-control"
-                                        value="<?php echo $res['email']; ?>">
-                                </div>
+                                        <div class="form-group mb-2">
+                                            <b>New Phone</b>
+                                            <input type="text" name="phone" class="border-secondary form-control"
+                                                value="<?php echo $res['phone']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <b>New Email</b>
+                                        <input type="email" name="email" class="border-secondary form-control"
+                                            value="<?php echo $res['email']; ?>">
+                                    </div>
 
-                                <div class="form-group mb-2">
-                                    <b>Enter New Username</b>
-                                    <input type="text" name="username" class="border-secondary form-control"
-                                        value="<?php echo $res['username']; ?>">
-                                </div>
+                                    <div class="form-group mb-2">
+                                        <b>New Username</b>
+                                        <input type="text" name="username" class="border-secondary form-control"
+                                            value="<?php echo $res['username']; ?>">
+                                    </div>
 
-                                <div class="form-group mb-2">
-                                    <b>Enter New Password</b>
-                                    <input type="password" name="password" class="border-secondary form-control"
-                                        value="<?php echo $res['password']; ?>">
-                                </div>
+                                    <div class="form-group mb-2">
+                                        <b>New Password</b>
+                                        <input type="password" name="password" class="border-secondary form-control"
+                                            value="<?php echo $res['password']; ?>">
+                                    </div>
 
-                                <div class="text-white form-group mt-4 mb-3">
-                                    <input type="submit" value="Update" name="update" class="btn btn-primary" />
-                                    <a href="./index.php" class="btn btn-dark">Exit</a>
-                                </div>
+                                    <div class="text-white d-flex justify-content-center form-group mt-2 mb-2">
+                                        <input type="submit" value="Update" name="update"
+                                            class="btn btn-primary" />&nbsp;
+                                        <a href="./index.php" class="btn btn-dark">Exit</a>
+                                    </div>
 
                             </form>
                         </div>

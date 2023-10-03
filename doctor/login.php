@@ -20,19 +20,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/quickcarew.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logos/quickcarew.png" />
-    <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Vendor CSS -->
     <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="../assets/js/login.js"></script>
-    <!-- Fix for custom scrollbar if JS is disabled-->
     <noscript>
         <style>
             .simplebar-content-wrapper {
@@ -45,14 +39,14 @@
 
 </head>
 
-<body class="font" background="../assets/images/banners/opa.png">
+<body class="font" background="../assets/images/banners/123.jpg">
 
     <section class="">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center mt-5">
+            <div class="d-flex justify-content-center align-items-center mt-3">
                 <div class="col-md-5 d-flex justify-content-center m-auto">
-                    <div class="card wid text-black border" style="border-radius: 20px;">
-                        <div class="card-body p-4 m-0">
+                    <div class="card wid text-black border m-5 opacity-75" style="border-radius: 20px;">
+                        <div class="card-body px-4 ">
                             <span class="d-flex justify-content-end">
                                 <a href="../index.php" class="myA">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor"

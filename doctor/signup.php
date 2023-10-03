@@ -37,20 +37,20 @@ include('../includes/dbconn.php');
 
 </head>
 
-<body class="font" background="../assets/images/banners/opa.png">
+<body class="font" background="../assets/images/banners/123.jpg">
 
     <section class="">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center mt-2">
+            <div class="d-flex justify-content-center align-items-center">
 
-                <div class="col-5 d-flex justify-content-center">
-                    <div class="card text-black border" style="border-radius: 25px;">
-                        <div class="card-body p-3">
+                <div class="col-5 d-flex justify-content-center m-0">
+                    <div class="card text-black border opacity-75" style="border-radius: 25px;">
+                        <div class="card-body p-2">
                             <span class="d-flex justify-content-end">
                                 <a href="../index.php" class="myA">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-</svg>
+                                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                    </svg>
                                 </a>
                             </span>
                             <img class="d-flex justify-content-center m-auto img-fluid" width="35%" src="../assets/images/logos/quickcare.png" />
@@ -64,20 +64,21 @@ include('../includes/dbconn.php');
                                     <div class="col-auto col-md-5 form-group">
                                     <input type="number" required name="phone" id="phone" class="form-control border-secondary" placeholder="Phone Number" />
                                     <span class="text-danger phone-not-found"></span>
-                                </div>
+                                    </div>
 
                                     <div class="col-auto col-md-7 form-group">
                                     <input type="email" required name="email" id="email" class="form-control border-secondary" placeholder="Email" />
+                                    </div>
                                 </div>
-
-                                <div class="form-group">
+<div class="row mb-2">
+                                    <div class="col-auto col-md-6 form-group">
+                                <!-- <div class="form-group"> -->
                                     <label>License Photo</label>
                                     <input type="file" name="license" id="license" class="form-control border-secondary mb-2"
                                         required placeholder="License Photo" />
                                 </div>
 
-                                <div class="form-group">
-                                    <select class="form-control mb-2 border-secondary" name="specializationid">
+                                    <div class="col-auto col-md-6 form-group">                                    Doctor's Specialization:<select class="form-control mb-2 border-secondary" name="specializationid">
                                         <option value="" class="">Choose Specialization</option>
                                         <?php
                                             $sql1="SELECT * from specialization";
@@ -93,7 +94,7 @@ include('../includes/dbconn.php');
                                                     ?>
                                         <option value="<?php  echo htmlentities($row1->ID);?>"><?php echo htmlentities($row1->Specialization);?></option><?php $cnt=$cnt+1;}} ?> 
                                     </select>
-                                    
+                                    </div>
 		                        </div>
                                 
                                 <div class="form-group mb-2">

@@ -51,17 +51,17 @@
 
 </head>
 
-<body class="font" background="./assets/images/banners/opa.png">
+<body class="font" background="./assets/images/banners/123.jpg">
 
     <!-- Main Section-->
     <!-- <section class="mt-0 overflow-hidden vh-100 d-flex justify-content-center align-items-center p-5 "> -->
     <section class="">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-centermt-4">
+            <div class="d-flex justify-content-center align-items-center ">
 
-                <div class="col-5 d-flex justify-content-center m-auto">
-                    <div class="card text-black border" style="border-radius: 25px;">
-                        <div class="card-body p-3">
+                <div class="col-5 d-flex justify-content-center">
+                    <div class="card text-black border opacity-75 m-4" style="border-radius: 25px;">
+                        <div class="card-body p-1">
                             <span class="d-flex justify-content-end">
                                 <a href="./index.php" class="myA">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor"
@@ -82,12 +82,12 @@
                                         class="form-control border-secondary" />
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-auto col-md-6 form-group">
+                                    <div class="col-auto col-md-5 form-group">
                                         <input type="number" required name="age" id="age"
                                             class="form-control border-secondary" placeholder="Age" />
                                     </div>
 
-                                    <div class="col-auto col-md-6 form-group">
+                                    <div class="col-auto col-md-7 form-group">
                                         <input type="number" required name="phone" id="phone"
                                             class="form-control border-secondary" placeholder="Phone Number" />
                                         <span class="text-danger phone-not-found"></span>
@@ -129,7 +129,7 @@
                                     </div>
                                 </div>
 
-                                <div class=" text-white form-group mt-3">
+                                <div class=" text-white form-group mt-3 mb-2">
                                     <input type="submit" value="Submit" name="login" id="login"
                                         class="btn btn-dark text-white d-flex justify-content-center m-auto" />
                                 </div>
